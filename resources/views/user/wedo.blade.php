@@ -11,38 +11,20 @@
        <div class="row">
           <div class="col-md-10 offset-md-1">
              <div class="row">
-                <div class="col-md-6 margin_bottom">
-                   <div class="work">
-                      <figure><img src="images/img1.png" alt="#" /></figure>
-                   </div>
-                   <div class="work_text">
-                      <h3>Quick repair<br><span class="blu">Total Service</span></h3>
-                   </div>
-                </div>
-                <div class="col-md-6 margin_bottom">
-                   <div class="work">
-                      <figure><img src="images/img2.png" alt="#" /></figure>
-                   </div>
-                   <div class="work_text">
-                      <h3>Quick repair<br><span class="blu">Total Service</span></h3>
-                   </div>
-                </div>
-                <div class="col-md-6 margin_bottom">
-                   <div class="work">
-                      <figure><img src="images/img3.png" alt="#" /></figure>
-                   </div>
-                   <div class="work_text">
-                      <h3>Quick repair<br> <span class="blu">Total Service</span></h3>
-                   </div>
-                </div>
-                <div class="col-md-6 margin_bottom">
-                   <div class="work">
-                      <figure><img src="images/img4.png" alt="#" /></figure>
-                   </div>
-                   <div class="work_text">
-                      <h3>Quick repair<br><span class="blu">Total Service</span></h3>
-                   </div>
-                </div>
+
+               @foreach ($services as $valueServices )
+               <div class="col-md-6 margin_bottom">
+                  <div class="work">
+                     <figure><img src="services_images/{{$valueServices -> image}}"  alt="#" /></figure>
+                  </div>
+                  <div class="work_text">
+                     <h3>{{$valueServices -> name}}<br><span class="blu">{{$valueServices -> description}}</span></h3>
+                  </div>
+               </div>
+               
+               @endforeach
+                
+   
              </div>
              <a class="read_more" href="#">See More</a>
           </div>

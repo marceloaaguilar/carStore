@@ -644,12 +644,17 @@ ul.btn li:last-child {
      padding-top: 20px;
 }
 
+
 .work figure {
      margin: 0;
 }
 
 .work figure img {
-     width: 100%;
+     filter: brightness(50%);
+     width: 35rem;
+     height: 20rem;
+     object-fit: cover;
+    
 }
 
 .work_text {

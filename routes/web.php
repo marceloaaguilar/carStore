@@ -34,4 +34,7 @@ Route::middleware([
 Route::get('/add_service', [AdminController::class, 'addView']);
 
 Route::post('/upload_service', [AdminController::class, 'upload']);
+
+
+Route::post('/appointments', [HomeController::class, 'contact']);
     

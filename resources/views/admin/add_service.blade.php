@@ -25,15 +25,15 @@
             @csrf
             <div class="mb-3">
               <label  class="form-label" for="">Service Name</label>
-              <input type="text" class='form-control' name="name">
+              <input type="text" class='form-control' name="name" required>
             </div>
             <div class="mb-3">
               <label  class="form-label" for="">Service Description</label>
-              <input type="text" class='form-control' name="description">
+              <input type="text" class='form-control' name="description" required>
             </div>
             <div class="mb-3">
               <label class="form-label" for="">Image</label>
-              <input type="file" class='form-control' name="serviceImage">
+              <input type="file" class='form-control' name="serviceImage" required>
             </div>
             <button type="submit" class="btn btn-success" >Submit</button>
           </form>

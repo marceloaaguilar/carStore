@@ -15,19 +15,50 @@
                 </ul>
              </div>
              <div class="col-md-6">
-                <form id="request" class="main_form">
+
+               @if(session()->has('message'))
+                  <div class="alert alert-success">
+                     <button type="button" class="close" data-dismiss="alert">
+                     X
+                     </button>
+                     {{session()-> get('message')}}
+                  </div>
+               @endif
+
+               @if ($errors -> any())
+                  <div class="alert alert-danger">
+                     <ul>
+                        @foreach ($errors ->all() as $error)
+                              <li>{{ $error }}</li>                            
+                        @endforeach
+                     </ul>
+                  </div>
+               @endif
+
+                <form id="request" action="{{url('appointments')}}" method="POST" class="main_form">
+                  @csrf
                    <div class="row">
                       <div class="col-md-12 ">
-                         <input class="contactus" placeholder="Full Name" type="type" name="Full Name"> 
+                         <input class="contactus" name="name" placeholder="Full Name" type="type" name="Full Name"> 
                       </div>
                       <div class="col-md-12">
-                         <input class="contactus" placeholder="Email" type="type" name="Email"> 
+                         <input class="contactus" name="email" placeholder="Email" type="type" name="Email"> 
                       </div>
                       <div class="col-md-12">
-                         <input class="contactus" placeholder="Phone Number" type="type" name="Phone Number">                          
+                         <input class="contactus" name="phone" placeholder="Phone Number" type="type" name="Phone Number">                          
+                      </div>
+
+                      <div class="col-md-12">
+                        <select name="service" placeholder="Select Your Service" class="contactus">
+                           <option value="">Select Your Service</option>
+                           @foreach ( $services as $valueServices)
+                              <option value="{{$valueServices -> name}}">{{$valueServices -> name}}</option>
+                           @endforeach
+
+                        </select>
                       </div>
                       <div class="col-md-12">
-                         <textarea class="textarea" placeholder="Message" type="type" Message="Name">Message </textarea>
+                         <textarea class="textarea" name="message" placeholder="Message" type="type" Message="Name"></textarea>
                       </div>
                       <div class="col-sm-col-xl-6 col-lg-6 col-md-6 col-sm-12">
                          <button class="send_btn">Send</button>
