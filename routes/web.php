@@ -41,4 +41,13 @@ Route::get('/myappointment', [HomeController::class, 'myappointment']);
 
 Route::get('/cancelAppointment/{id}', [HomeController::class, 'cancelAppointment']);
 
+Route::get('/showAppointment', [AdminController::class, 'showAppointment']);
+
+Route::get('/cancelAppointment/{id}', [AdminController::class, 'cancelAppointment']);
+
+Route::get('/showService', [AdminController::class, 'showService']);
+
+Route::get('/updateService/{id}', [AdminController::class, 'updateService']);
+
+Route::post('/editService/{id}', [AdminController::class, 'editService']);
     

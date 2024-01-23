@@ -121,7 +121,7 @@
                 <td>{{$appointments -> message}}</td>
                 @if ($appointments -> status == 'Canceled')
                     <td style="color:rgb(255, 89, 89); font-weight:700">{{$appointments -> status}}</td>
-                    @else 
+               @else 
                     <td>{{$appointments -> status}}</td>
                 @endif
                 <td><a class="btn btn-danger" href="{{url('cancelAppointment',$appointments -> id)}}">Cancel</a></td>
